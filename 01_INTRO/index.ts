@@ -9,3 +9,17 @@ function greeting(name: string) {
 greeting(firstName)
 // greeting(anotherName)
 // greeting(x)
+
+
+//DESAFIO 1
+
+function soma(a: number, b: number) {
+  return a + b
+}
+
+console.log(soma(4, 5))
+
+const n1 = 10
+const n2 = 15
+
+console.log(soma(n1, n2))
