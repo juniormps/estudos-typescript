@@ -1,3 +1,5 @@
+// Para gerar o arquivo tsconfig.json, deve-se executar o comando "tsc --init" no diretório do projeto. O arquivo tsconfig.json é utilizado para configurar as opções do compilador TypeScript, permitindo personalizar o processo de compilação e definir regras específicas para o projeto.
+
 {
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */

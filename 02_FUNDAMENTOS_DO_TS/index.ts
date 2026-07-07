@@ -25,19 +25,27 @@ console.log(fullName)
 // 3 - boolean
 let a: boolean = true
 
+console.log(a)  
 console.log(typeof a)
 
 a = false
+console.log(a)
 
 // 4 - inference e annotation
-const ann: string = 'Teste'
+const ann: string = 'Teste'  //Variável tipada por annotation (como string)
 
-const inf = 'Testando'
+const inf = 'Testando'  //Variável tipada por inferência (como string)
+
+console.log(ann)
+console.log(inf)
 
 // 5 - compile automatico
+    //Para compilar automaticamente, basta executar o comando: tsc -w
+    //Assim, não é necessário ficar compilando manualmente o arquivo sempre que houver uma alteração no código.
+
 let q = 10
 
-console.log(q)
+console.log(typeof q)
 
 q = 11
 

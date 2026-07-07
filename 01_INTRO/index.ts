@@ -1,3 +1,5 @@
+//Para compilar o arquivo index.ts para index.js, utilize o comando: tsc index.ts
+
 const firstName = 'Matheus'
 const anotherName = 1
 const x = true
