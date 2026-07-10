@@ -14,21 +14,21 @@ const secondObj = { name: 'Carro', rodas: 4 };
 const thirdObj = { price: 19.99, qty: 10 };
 console.log(showProductName(myObj));
 console.log(showProductName(secondObj));
-const myCar = { name: 'Fusca', wheels: 4, engine: 1 };
-const myPen = { name: 'Caneta Bic', wheels: false, engine: false };
+const myCar = { name: 'Fusca', wheels: 4, engine: 1, color: 'Branca' };
+const myPen = { name: 'Caneta Bic', wheels: false, engine: false, color: 'Azul' };
 console.log(myCar);
 console.log(myPen);
 // 4 - type parameters
 function getSomeKey(obj, key) {
-    return `A chave ${key} tem o valor ${obj[key]}`;
+    return `A chave ${String(key)} tem o valor ${obj[key]}`;
 }
 const server = {
     hd: '2TB',
     ram: '32GB',
 };
 console.log(getSomeKey(server, 'ram'));
-function showCharName(obj, name) {
-    return `${obj[name]}`;
+function showCharName(obj, key) {
+    return `${obj[key]}`;
 }
 const myChar = {
     name: 'Matheus',
@@ -36,7 +36,11 @@ const myChar = {
     hasDriveLicense: true,
 };
 console.log(showCharName(myChar, 'name'));
-// console.log(showCharName([0]))
+console.log(showCharName(myChar, 'age'));
+console.log(showCharName(myChar, 'hasDriveLicense'));
+//console.log(showCharName(myChar, 'outra'))
+//console.log(showCharName(myChar, true))
+//console.log(showCharName([0]))
 // 6 - typeof type operator
 const userName = 'Matheus';
 const userName2 = 'João';
@@ -50,5 +54,9 @@ function showTruckKm(km) {
     console.log(`O caminhão já rodou ${km} kms`);
 }
 showTruckKm(newTruck.km);
+showTruckKm(5000);
 const someVar = 1;
 const testing = "some text";
+const testingA = "text";
+const testingB = "name";
+// const testingC: a3 = "test"

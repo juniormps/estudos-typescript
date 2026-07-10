@@ -1,39 +1,41 @@
 "use strict";
+// Narrowing são formas de checar o tipo de uma variável, para que possamos trabalhar com ela de forma mais segura.
 // 1 - type guard
 function sum(a, b) {
-    if (typeof a === 'string' && typeof b === 'string') {
+    if (typeof a === "string" && typeof b === "string") {
         console.log(parseFloat(a) + parseFloat(b));
     }
-    else if (typeof a === 'number' && typeof b === 'number') {
+    else if (typeof a === "number" && typeof b === "number") {
         console.log(a + b);
     }
     else {
-        console.log('Impossível realizar a soma!');
+        console.log("Impossível realizar a soma!");
     }
 }
 sum(1, 2);
-sum('4', '4');
-sum('5', 1);
+sum("4", "4");
+sum("5", 1);
 // 2 - checando se valor existe
 function operations(arr, operation) {
     if (operation) {
-        if (operation === 'sum') {
+        if (operation === "sum") {
             const sum = arr.reduce((i, total) => i + total);
             console.log(sum);
         }
-        else if (operation === 'multiply') {
+        else if (operation === "multiply") {
             const multiply = arr.reduce((i, total) => i * total);
             console.log(multiply);
         }
     }
     else {
-        console.log('Por favor, defina uma operação!');
+        console.log("Por favor, defina uma operação!");
     }
 }
-operations([10, 20, 30], 'sum');
-operations([10, 20, 30], 'multiply');
-operations([10, 20, 30], '');
+operations([10, 20, 30], "sum");
+operations([10, 20, 30], "multiply");
+operations([10, 20, 30], "");
 // 3 - instanceof
+// instanceof é um operador que verifica se um objeto é uma instância de uma classe específica.
 class User {
     constructor(name) {
         this.name = name;
@@ -44,8 +46,10 @@ class SuperUser extends User {
         super(name);
     }
 }
-const jhon = new User('Jhon');
-const paul = new SuperUser('Paul');
+const jhon = new User("Jhon");
+const paul = new SuperUser("Paul");
+console.log(jhon);
+console.log(paul);
 function userGreeting(user) {
     if (user instanceof SuperUser) {
         console.log(`Olá ${user.name}, deseja ver os dados?`);
@@ -57,6 +61,7 @@ function userGreeting(user) {
 userGreeting(jhon);
 userGreeting(paul);
 // 4 - operador in
+// O operador in é usado para verificar se uma propriedade específica existe em um objeto.
 class Dog {
     constructor(name, breed) {
         this.name = name;
@@ -65,21 +70,21 @@ class Dog {
         }
     }
 }
-const turca = new Dog('Turca');
-const bob = new Dog('Bob', 'Pastor Alemão');
+const turca = new Dog("Turca");
+const bob = new Dog("Bob", "Pastor Alemão");
 function showDogDetails(dog) {
-    if ('breed' in dog) {
+    if ("breed" in dog) {
         console.log(`O cachorro é da raça: ${dog.breed}`);
     }
     else {
-        console.log('O cachorro é um SRD!');
+        console.log("O cachorro é um SRD!");
     }
 }
 showDogDetails(turca);
 showDogDetails(bob);
 function showUserReview(review) {
     if (!review) {
-        console.log('Você não avaliou o produto!');
+        console.log("Você não avaliou o produto!");
         return;
     }
     console.log(`A nota que você deu foi ${review}, obrigado!`);
