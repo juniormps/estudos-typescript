@@ -1,3 +1,3 @@
 export default function importGreet() {
-    console.log("Olá, esta função foi importada!")
+    console.log("Olá, esta função foi exportada!")
 }

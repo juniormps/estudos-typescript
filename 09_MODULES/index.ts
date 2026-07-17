@@ -1,45 +1,46 @@
 // 1 - importação de arquivos
-import importGreet from './greet.js'
+import importGreet from "./greet.js"; //a importação deve ser do arquivo ".js"
 
-importGreet()
+importGreet();
 
 // 2 - import de variavel
-import {x} from './variable.js'
+//Para importar uma variável,  deve-se utilizar o destructuring "{}"
+import { x } from "./variable.js";
 
-console.log(x)
+console.log(x);
 
 // 3 - multiplas exportacoes
-import {a, b, myExportFunction} from './multiple'
+import { a, b, myExportFunction } from "./multiple";
 
-console.log(a)
-console.log(b)
+console.log(a);
+console.log(b);
 
-myExportFunction()
+myExportFunction();
 
 // 4 - alias
-import {someName as otherName} from './changename.js'
+import { someName as name } from "./changename.js";
 
-console.log(otherName)
+console.log(name);
 
 // 5 - import all
-import * as myNumbers from './numbers.js'
+import * as myNumbers from "./numbers.js";
 
-console.log(myNumbers)
-console.log(myNumbers.n1)
+console.log(myNumbers);
+console.log(myNumbers.n1);
 
 // 6 - importando tipos
-import {Human} from './mytype.js'
+import { Human } from "./mytype.js";
 
 class User implements Human {
-    name
-    age
+    name;
+    age;
 
     constructor(name: string, age: number) {
-        this.name = name
-        this.age = age
-    } 
+        this.name = name;
+        this.age = age;
+    }
 }
 
-const joao = new User("João", 25)
+const joao = new User("João", 25);
 
-console.log(joao)
+console.log(joao);

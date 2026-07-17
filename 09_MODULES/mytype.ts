@@ -1,1 +1,4 @@
-export interface Human {name: string, age: number}
+export interface Human {
+    name: string;
+    age: number;
+}
