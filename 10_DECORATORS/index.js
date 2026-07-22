@@ -1,4 +1,5 @@
 "use strict";
+//Antes de utilizar decorators, é necessário habilitar a opção experimentalDecorators no arquivo tsconfig.json
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9,7 +10,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 function myDecorator() {
     console.log("Iniciando o decorator!");
     return function (target, propertyKey, descriptor) {
-        console.log("myDecorator(): executado");
+        console.log("Executando myDecorator()");
         console.log(target);
         console.log(propertyKey);
         console.log(descriptor);
@@ -81,6 +82,7 @@ __decorate([
     enumerable(false)
 ], Machine.prototype, "showName", null);
 const trator = new Machine("Trator");
+console.log(trator.showName());
 console.log(trator);
 // 5 - acessor decorator
 class Monster {
@@ -115,7 +117,7 @@ function formatNumber() {
         };
         Object.defineProperty(target, propertyKey, {
             set: setter,
-            get: getter
+            get: getter,
         });
     };
 }
@@ -149,8 +151,12 @@ let Pen = class Pen {
 Pen = __decorate([
     createdDate
 ], Pen);
-const newBook = new Book(1);
+const newBook = new Book(12);
+const newPen = new Pen(15);
 console.log(newBook);
+console.log(newPen);
+console.log(newBook.createdAt);
+console.log(newPen.createdAt);
 // 8 - exemplo real method decorator
 function checkIfUserPosted() {
     return function (target, key, descriptor) {
@@ -200,7 +206,7 @@ function Max(limit) {
         };
         Object.defineProperty(target, propertyKey, {
             get: getter,
-            set: setter
+            set: setter,
         });
     };
 }
